@@ -15,8 +15,8 @@ class App extends Component{
        }
 	   
 	   const URL = 'https://restcountries.eu/rest/v2/all'
-	   axios.get(URL)
-	    .then(res => {
+  	   axios.get(URL)
+	     .then(res => {
 	       const countries  = res.data
           this.setState({
 	   	  	countries : countries, 
@@ -43,27 +43,35 @@ searchByRegion(query){
   this.setState({countries : regions})
 }  
 	
-    
-   
+ getEurope(event){
+  let europe = 
+  this.state.countries.filter((country)=>{
+    return country.region === 'Europe'
+  })
+  this.setState({countries : europe})
+}   
+  
 
   
-	render(){
+render(){
 	return ( 
-		<div>
+	    	<div>
             <SearchBar
-            countries={this.state.countries} 
-            searchCountry={this.searchCountry.bind(this)} 
-            searchByRegion={this.searchByRegion.bind(this)}
-            />
+               countries={this.state.countries} 
+               searchCountry={this.searchCountry.bind(this)} 
+               searchByRegion={this.searchByRegion.bind(this)}
+               getEurope={this.getEurope.bind(this)}
+                />
             
-            <CountryDetail country={this.state.selectedCountry}  />
-            <CountryList
+             <CountryDetail country={this.state.selectedCountry}  />
+            
+             <CountryList
                 onCountrySelect={selectedCountry => this.setState({selectedCountry })}
                 countries={this.state.countries}
              />
           </div>
      )
-}
+   }
 
 }
 

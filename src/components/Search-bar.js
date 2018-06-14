@@ -16,7 +16,10 @@ handleRegion(event) {
   }
 
 
-  
+ handleClick(event){
+  event.preventDefault()
+  this.props.getEurope(event.target.value)
+ } 
 
   render(){
    
@@ -32,6 +35,10 @@ handleRegion(event) {
             onChange={this.handleRegion.bind(this)} 
             className='form-control mr-sm-2' type='search' placeholder='search by region' aria-label='search' 
            />
+           <button className='btn btn-primary'
+             onClick={this.handleClick.bind(this)}
+
+            >Get Europe Only </button>
            </form>
           </nav>
     )

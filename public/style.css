@@ -1,0 +1,61 @@
+.input{
+	margin: 20px;
+	text-align: center;
+
+}
+
+.search-bar input {
+	width : 75%;
+	margin-top: 2em;
+	
+
+}
+
+.video-item img{
+	max-width : 64px;
+}
+
+
+.list-group-item{
+	cursor :pointer;
+	width :30em;
+	display: 
+}
+
+.list-inline-item:hover{
+	background-color: #eee
+}
+.media-object{
+	margin-left: 1.2em;
+	border : 2px solid #eee;
+}
+.media-heading{
+	margin-left: 1em;
+	font-size: 0.75em;
+	font-family: 'Bitter', serif;
+}
+.card{
+	float: left !important;
+	max-width: 30em !important;
+	margin-left: 1em;
+	margin-right:1em;
+	margin-bottom: 2em
+}
+.card-text{
+	font-size: 1em;
+    font-family: 'Bitter', serif;	
+}
+.card-img-top{
+	max-width: 30em !important;
+	padding: 1em
+}
+
+
+.list-inline-item{
+	border : 3px solid #eee;
+	padding: 0.9em;
+	width : 14em;
+	height : 6em;
+	float: right !important
+	margin : 3em 3em 3em 3em ;
+}

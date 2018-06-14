@@ -18,7 +18,7 @@ class App extends Component{
 	   axios.get(URL)
 	    .then(res => {
 	       const countries  = res.data
-	   	    this.setState({
+          this.setState({
 	   	  	countries : countries, 
 	   	  	selectedCountry : countries[0]
 	   	  	
@@ -26,21 +26,36 @@ class App extends Component{
 	   	  
 	   })
    	}
-	
 
-
-   searchCountry(query){
+searchCountry(query){
     let countries = 
     this.state.countries.filter((country)=>{
-    	return country.name.includes(query)
+      return country.name.includes(query)
     })
     this.setState({countries : countries})
-  } 
+  }
 
+searchByRegion(query){
+  let regions = 
+  this.state.countries.filter((country)=>{
+    return country.region.includes(query) 
+  })
+  this.setState({countries : regions})
+}  
+	
+    
+   
+
+  
 	render(){
 	return ( 
 		<div>
-            <SearchBar searchCountry={this.searchCountry.bind(this)} />
+            <SearchBar
+            countries={this.state.countries} 
+            searchCountry={this.searchCountry.bind(this)} 
+            searchByRegion={this.searchByRegion.bind(this)}
+            />
+            
             <CountryDetail country={this.state.selectedCountry}  />
             <CountryList
                 onCountrySelect={selectedCountry => this.setState({selectedCountry })}
@@ -49,5 +64,7 @@ class App extends Component{
           </div>
      )
 }
+
 }
+
 ReactDOM.render(<App /> , document.getElementById('root'))

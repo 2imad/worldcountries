@@ -8,8 +8,8 @@
     "react": "^16.4.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.0",
+    "react-js-pagination": "^3.0.2",
     "react-motion-grid": "^1.2.3",
-    "react-paginating": "^1.0.1",
     "react-scripts": "1.1.4"
   },
   "scripts": {

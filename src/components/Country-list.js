@@ -5,9 +5,14 @@ import CountryListItem from './Country-list-item'
 
 
 const CountryList = (props) =>{
-const start = (props.page - 1 ) * props.resPerPage
-const end = props.page * props.resPerPage   
-const countryItems = props.countries.slice(start , end ).map((country , index)=>{
+
+
+
+if(!props.pageOfItems){
+  return <div>Loading</div>
+}
+
+const countryItems = props.pageOfItems.map((country , index)=>{
      
   
   
@@ -19,17 +24,20 @@ const countryItems = props.countries.slice(start , end ).map((country , index)=>
          )
        })	
  
+
    return(
        <div>
+         <div className='row' >
 		      <ul className='list-inline'>
             {countryItems}
            </ul>
+          </div>
         </div>
        )
-  }
+  
 
 
-
+}
 export default CountryList
 
 

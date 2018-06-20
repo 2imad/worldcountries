@@ -8,7 +8,7 @@ class SearchBar extends Component{
         this.state ={
             countries :[],
             _input : '',
-            input: ''
+             input: ''
             
         }
         this.handleSearch = this.handleSearch.bind(this)

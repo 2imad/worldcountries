@@ -1,15 +1,5 @@
-input{
-	
-	
 
-}
 
-.search-bar input {
-	width : 75%;
-	margin-top: 2em;
-	
-
-}
 
 .video-item img{
 	max-width : 64px;
@@ -23,23 +13,23 @@ input{
 }
 
 .list-inline-item:hover{
-	background-color: #eee
+	background-color: #eee;
+	cursor: pointer
 }
 .media-object{
 	margin-left: 1.2em;
 	border : 2px solid #eee;
+	
 }
 .media-heading{
 	margin-left: 1em;
-	font-size: 0.75em;
+	font-size: 0.60em;
 	font-family: 'Bitter', serif;
 }
 .card{
 	float: left !important;
 	max-width: 30em !important;
-	margin-left: 1em;
-	margin-right:1em;
-	margin-bottom: 2em
+	margin-left:2em
 }
 .card-text{
 	font-size: 1em;
@@ -54,8 +44,33 @@ input{
 .list-inline-item{
 	border : 3px solid #eee;
 	padding: 0.9em;
-	width : 14em;
+	width : 16em;
 	height : 6em;
-	float: right !important
-	margin : 3em 3em 3em 3em ;
+	float: right !important;
+	overflow: hidden
+	
 }
+.list-inline-item:last-child{
+	margin-right:0.5em
+}
+.pagination {
+	display: inline-block;
+	margin-left: 5.7em
+	
+}
+
+.pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination li.active {
+    background-color:#0069D8;
+	color: white;
+	border-radius: 50%;
+	cursor: pointer
+}
+
+.pagination li:hover:not(.active) {background-color: #ddd;border-radius: 50% ;cursor: pointer}

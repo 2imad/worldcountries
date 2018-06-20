@@ -4,37 +4,46 @@ import ReactDOM from 'react-dom'
 import SearchBar from './components/Search-bar'
 import CountryList from './components/Country-list'
 import CountryDetail from './components/Country-detail'
+import Pagination from './components/Pagination'
+
 
 class App extends Component{
 	constructor(props){
 		super(props)
 	
        this.state = { 
-       	 countries : [] ,
-         selectedCountry : null,
-         page : 1,
-         resPerPage : 20,
-         numResults : 250,
-         pages : 0
+          	 countries : [] ,
+             selectedCountry : null,
+             
+        }
+       this.onChangePage = this.onChangePage.bind(this)
       }
+
+      onChangePage(pageOfItems) {
+        // update state with new page of items
+        this.setState({ pageOfItems: pageOfItems });
     }
 
 
 
-    componentWillMount(){
-         const URL = 'https://restcountries.eu/rest/v2/all'
+      componentWillMount(){
+       const URL = 'https://restcountries.eu/rest/v2/all'
   	       axios.get(URL)
 	         .then(res => {
 	         const countries  = res.data
+           
            this.setState({
-	   	  	 countries : countries, 
-	   	  	 selectedCountry : countries[0],
+            countries : countries,
+            selectedCountry : countries[0],
+            pageOfItem :[]
           })
-          
-	   	 })
+        
+        })
       }
-
     
+      
+  
+
 searchCountry(query){
     let country = 
     this.state.countries.filter((country)=>{
@@ -59,11 +68,12 @@ searchByRegion(query){
   this.setState({countries : europe})
   
 }   
-  
+
 
  
  
 render(){
+
 	return ( 
 	    	<div>
            <SearchBar
@@ -74,18 +84,20 @@ render(){
                
                
                 />
+            <Pagination items={this.state.countries} onChangePage={this.onChangePage} />    
            
              <CountryDetail country={this.state.selectedCountry}  />
              
              <CountryList
                 onCountrySelect={selectedCountry => this.setState({selectedCountry })}
                 countries={this.state.countries}
-                page={this.state.page}
-                resPerPage={this.state.resPerPage}
-                numResults={this.state.numResults}
+                pageOfItems={this.state.pageOfItems}
+                
             />
-           
-          </div>
+            
+            
+                   
+        </div>
      )
    }
 

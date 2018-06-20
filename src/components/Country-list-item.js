@@ -2,11 +2,7 @@ import React from  'react'
 
 const CountryListItem = ({country , onCountrySelect}) => {
 
-const name = country.name
-const flag = country.flag
-const capital = country.capital
-const region = country.region
- 
+const { name , flag , capital , region ,  } = country  
    return (
             <li onClick={() => onCountrySelect(country)}  className='list-inline-item'>
             <div className='video-list media'>

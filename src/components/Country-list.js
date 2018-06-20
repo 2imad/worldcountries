@@ -4,7 +4,10 @@ import CountryListItem from './Country-list-item'
 
 
 
+
 const CountryList = (props) =>{
+   
+  
 
 
 
@@ -13,7 +16,7 @@ if(!props.pageOfItems){
 }
 
 const countryItems = props.pageOfItems.map((country , index)=>{
-     
+
   
   
   return (
@@ -29,14 +32,11 @@ const countryItems = props.pageOfItems.map((country , index)=>{
        <div>
          <div className='row' >
 		      <ul className='list-inline'>
-            {countryItems}
+             {countryItems}
            </ul>
           </div>
         </div>
        )
-  
-
-
 }
 export default CountryList
 

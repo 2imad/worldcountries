@@ -11,7 +11,7 @@ const region = country.region
             <li onClick={() => onCountrySelect(country)}  className='list-inline-item'>
             <div className='video-list media'>
                <div className='media-left'>
-                <img style={{width:'5em'}} className='media-object' src={flag} />
+                <img style={{width:'5em'}} className='media-object rounded-circle' src={flag} />
                </div>
                <div className='media-body'>
                  <div className='media-heading'> {name}<br/>{capital}<br/>{region}</div>

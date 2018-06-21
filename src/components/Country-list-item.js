@@ -8,7 +8,7 @@ return (
         <li onClick={() => onCountrySelect(country)}  className='list-inline-item'>
            <div className='video-list media'>
               <div className='media-left'>
-                  <img style={{width:'5em'}} className='media-object rounded-circle' src={flag} />
+                  <img style={{width:'5em'}} className='media-object rounded' src={flag} />
               </div>
               <div className='media-body'>
                 <div className='media-heading '> 

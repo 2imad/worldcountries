@@ -5,7 +5,7 @@ import SearchBar from './components/Search-bar'
 import CountryList from './components/Country-list'
 import CountryDetail from './components/Country-detail'
 import Pagination from './components/Pagination'
-import {Animated} from "react-animated-css"
+
 
 
 class App extends Component{
@@ -68,7 +68,8 @@ searchByRegion(query){
   })
   this.setState({countries : europe})
   
-}   
+}
+
 
 
  
@@ -82,17 +83,16 @@ render(){
                searchByRegion={this.searchByRegion.bind(this)}
                getEurope={this.getEurope.bind(this)}
                countries={this.state.countries}
-               
-               
-                />
+            
+              />
             <Pagination items={this.state.countries} onChangePage={this.onChangePage} />    
-             <CountryDetail country={this.state.selectedCountry}  />
+            <CountryDetail country={this.state.selectedCountry}/>
             <CountryList
                 onCountrySelect={selectedCountry => this.setState({selectedCountry })}
                 countries={this.state.countries}
                 pageOfItems={this.state.pageOfItems}
               />
-        </div>
+           </div>
      )
    }
 

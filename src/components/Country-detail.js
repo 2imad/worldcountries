@@ -10,7 +10,7 @@ const CountryDetail = ({ country }) => {
     return <div>Loading </div>
 
   }
-  const { flag, name, population, region, capital, time } = country
+  const { flag, name, population, region, capital } = country
   const time = country.timezones[0]
   return (
     <div>
